@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 
 interface User {
   id: string;
@@ -36,10 +37,11 @@ export default function UsersPage({ users, error }: UsersPageProps) {
       <div className="users-grid">
         {users && users.length > 0 ? (
           users.map((user) => (
-            <div key={user.id} className="user-card">
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-            </div>
+            <li key={user.id} className="user-card">
+              <Link href={`/users/${user.id}`}>
+                {user.name}
+              </Link>
+            </li>
           ))
         ) : (
           <p className="no-users">No users found.</p>

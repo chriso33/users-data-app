@@ -18,6 +18,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<User[]
     return res.status(200).json(users);
   }
 
-  // Handle other HTTP methods (optional)
   return res.status(405).json({ message: "Method Not Allowed" });
 }
