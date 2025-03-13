@@ -1,11 +1,6 @@
-import { users as usersMock } from "../../../mocks/users";
+import { users as usersMock } from "@/mocks/users";
+import { User } from "@/models/user";
 import { NextApiRequest, NextApiResponse } from "next";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;

@@ -1,11 +1,6 @@
-import { users as usersMock } from "../../mocks/users";
+import { User } from "@/models/user";
+import { users as usersMock } from "@/mocks/users";
 import { NextApiRequest, NextApiResponse } from "next";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<User[] | { message: string }>) {
   if (req.method === "GET") {
