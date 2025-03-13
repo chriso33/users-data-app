@@ -1,5 +1,6 @@
 import { User } from "@/models/User";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 interface UserDetailsPageProps {
   user: User;
 }
@@ -26,6 +27,16 @@ const UserDetailsPage = ({ user }: UserDetailsPageProps) => {
         <h1>{user.name}'s Details</h1>
         <p>ID: {user.id}</p>
         <p>Email: {user.email}</p>
+        <h3>Friends:</h3>
+        <div>
+          {user.friends.map((friend) => (
+            <div key={friend.id}>
+              <Link href={`/users/${friend.id}`}>
+                {friend.name}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
