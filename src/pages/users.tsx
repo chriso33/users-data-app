@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import Link from "next/link";
 
 interface User {
-  id: string;
+  id: number;
   name: string;
   email: string;
 }

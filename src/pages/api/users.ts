@@ -1,19 +1,15 @@
-import { faker } from "@faker-js/faker";
+import { users as usersMock } from "../../mocks/users";
 import { NextApiRequest, NextApiResponse } from "next";
 
 interface User {
-  id: string;
+  id: number;
   name: string;
   email: string;
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<User[] | { message: string }>) {
   if (req.method === "GET") {
-    const users: User[] = Array.from({ length: 100 }, () => ({
-      id: faker.string.uuid(),
-      name: faker.person.fullName(),
-      email: faker.internet.email(),
-    }));
+    const users: User[] = usersMock;
 
     return res.status(200).json(users);
   }
