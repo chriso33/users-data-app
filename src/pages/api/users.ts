@@ -1,4 +1,4 @@
-import { User } from "@/models/user";
+import { User } from "@/models/User";
 import { users as usersMock } from "@/mocks/users";
 import { NextApiRequest, NextApiResponse } from "next";
 
