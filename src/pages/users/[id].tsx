@@ -1,4 +1,4 @@
-import { User } from "@/models/user";
+import { User } from "@/models/User";
 import { GetServerSideProps } from "next";
 
 interface UserDetailsPageProps {
