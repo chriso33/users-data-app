@@ -1,10 +1,5 @@
+import { User } from "@/models/user";
 import { GetServerSideProps } from "next";
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-}
 
 interface UserDetailsPageProps {
   user: User;
